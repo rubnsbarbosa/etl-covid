@@ -1,0 +1,8 @@
+numpy==1.19.0
+pandas==1.0.5
+pyarrow==0.17.1
+requests==2.24.0
+urllib3==1.25.9
+ibm-cos-sdk==2.6.3
+ibm-cos-sdk-core==2.6.3
+ibm-cos-sdk-s3transfer==2.6.3
