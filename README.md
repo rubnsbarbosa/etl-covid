@@ -14,7 +14,7 @@ Extract data from a public API called IntegraSUS.
 
 ## Quick Usage
 
-### Requiriments
+### Requirements
 
 ```bash
 $ pip install -r requirements.txt
