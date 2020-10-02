@@ -3,7 +3,6 @@ import os
 import sys
 import json
 import logging
-import datetime
 import requests
 import pandas as pd
 
@@ -38,11 +37,14 @@ def transforming(df):
     df_covid['dataInicioSintomas'] = df_covid['dataInicioSintomas'].dt.date
     print(df_covid[:5])
 
-    logger.info('FILTERING ON DATE')
-    df_covid = df_covid[df_covid['dataInicioSintomas'] == datetime.date.today()]
+    logger.info('RETURN DATASET')
+    return df_covid[:50]
 
-    logger.info('CONVERT TYPES OF OBJECT TO NUMERIC AND DATETIME')
-    df_covid["idadePaciente"] = pd.to_numeric(df_covid["idadePaciente"])
-    df_covid["dataInicioSintomas"]= pd.to_datetime(df_covid["dataInicioSintomas"]) 
-    return df_covid
-
+def loading(cos, bucket_name, filename):
+    logger.info('UPLOADING {} TO IBM BUCKET {}...'.format(filename, bucket_name))
+    try:
+        cos.upload_file(Filename=filename, Bucket=bucket_name, Key=os.path.basename(filename))
+        logger.info('UPLOAD COMPLETED')
+    except Exception as e:
+        logger.error("UPLOAD FAILED")
+        logger.exception(e)
