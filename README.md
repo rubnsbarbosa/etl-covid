@@ -1,6 +1,6 @@
 # ETL Pipeline Covid-19
 
-This repository is about an ETL (Extract, Transform and Load) of coronavirus data, referring to the state of Ceará and it's also part of hacktoberfest an open source software celebration you can read more about it: hacktoberfest.digitalocean.com.
+This repository is about an ETL (Extract, Transform and Load) of coronavirus data, referring to the state of Ceará and it's also part of hacktoberfest an open source software celebration.
 
 ## Public API
 
